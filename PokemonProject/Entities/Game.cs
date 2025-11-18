@@ -29,7 +29,8 @@ namespace PokemonProject.Entities
             Pokemon player = new Pokemon (playerName, playerType);
             Console.WriteLine($"\nVocê escolheu o tipo {playerType}! Uma sábia escolha.");
             Console.WriteLine($"Seu HP: {player.HpMax} | Ataque: {player.Fight} | Defesa: {player.Defense}");
-            Console.ReadLine();
+            Console.WriteLine("\n>> Pressione qualquer tecla para continuar... <<");
+            Console.ReadKey(true);
 
             List<Pokemon> opponents = GenerateOpponents(playerType, dificuldade);
 
@@ -41,8 +42,8 @@ namespace PokemonProject.Entities
                 Console.Clear();
                 Console.WriteLine($"\n--- ROUND {round} / 4 ---");
                 Console.WriteLine($"Prepare-se! Seu Oponente é do tipo {enemy.TypePrincipal}");
-                Console.WriteLine("Pressione ENTER para entrar na Arena...");
-                Console.ReadLine(); 
+                Console.WriteLine("\n>> Pressione qualquer tecla para continuar... <<");
+                Console.ReadKey(true);
 
                 Battle battle = new Battle(player, enemy);
                 bool playerWon = battle.StartBattle();
@@ -183,8 +184,8 @@ namespace PokemonProject.Entities
                 Console.Write("Digite o nome do tipo (ex: Fire): ");
                 string input = Console.ReadLine();
 
-                // Tenta converter a string digitada para o Enum
-                if (Enum.TryParse(input, true, out PokemonTypes result)) // true ignora maiúsculas/minúsculas
+                
+                if (Enum.TryParse(input, true, out PokemonTypes result)) 
                 {
                     return result;
                 }
