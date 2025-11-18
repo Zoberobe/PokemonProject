@@ -29,36 +29,36 @@ namespace PokemonProject.Entities
                 Console.WriteLine($"\nStatus {_Player.Name}: {_Player.HpNow}/{_Player.HpMax} HP");
                 Console.WriteLine($"Status {_Enemy.Name}: {_Enemy.HpNow}/{_Enemy.HpMax} HP");
 
-                // --- TURNO DO JOGADOR ---
+ 
                 Console.WriteLine("\nSua vez! Escolha uma ação:");
                 Console.WriteLine("1. Atacar");
                 Console.WriteLine("2. Defender (Reduz dano recebido)");
                 Console.Write("Opção: ");
-                string choice = Console.ReadLine();
+
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                char option = keyInfo.KeyChar; 
 
                 bool isPlayerDefending = false;
 
-                if (choice == "1")
+                if (option == '1')
                 {
+                    Console.WriteLine("1"); 
                     ExecuteAttack(_Player, _Enemy, false);
                 }
-                else if (choice == "2")
+                else if (option == '2')
                 {
-                    Console.WriteLine($"🛡️ {_Player.Name} entrou em posição de defesa!");
+                    Console.WriteLine("2"); 
+                    Console.WriteLine($"\n🛡️ {_Player.Name} entrou em posição de defesa!");
                     isPlayerDefending = true;
                 }
                 else
                 {
-                    Console.WriteLine("Opção inválida! Você tropeçou e perdeu a vez.");
+                   
+                    Console.WriteLine("\n❌ Tecla inválida! Use apenas 1 ou 2.");
+                    continue; 
                 }
 
-                    
-                if (!_Enemy.EstaVivo())
-                {
-                    Console.WriteLine($"\n🎉 {_Enemy.Name} desmaiou! VOCÊ VENCEU!");
-                    Console.ReadLine();
-                    return true; 
-                }
+
 
                 
                 Console.WriteLine($"\n >>> Vez de {_Enemy.Name} <<<");
@@ -110,8 +110,8 @@ namespace PokemonProject.Entities
 
             Console.WriteLine("----------------------------------------");
 
-            Console.Write("[Pressione Enter]");
-            Console.ReadLine();
+            Console.WriteLine(">> Pressione qualquer tecla para continuar... <<");
+            Console.ReadKey(true); 
         }
 
 

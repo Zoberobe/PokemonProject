@@ -160,6 +160,10 @@ namespace PokemonProject.Entities
 
                 Console.WriteLine("Opção inválida!");
 
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Entrada inválida! Por favor, digite apenas 1, 2 ou 3.");
+                Console.ResetColor();
+
             }
         }
 
