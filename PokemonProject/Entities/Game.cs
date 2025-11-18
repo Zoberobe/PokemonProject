@@ -62,7 +62,7 @@ namespace PokemonProject.Entities
                         Console.WriteLine($"🔼 Status Atualizados: HP Máx {player.HpMax} | Ataque {player.Fight}");
                         Console.WriteLine("Pressione ENTER para o próximo desafio...");
                         Console.WriteLine("----------------------------------------------------");
-                        Console.ReadLine();
+                        Console.ReadKey(true);
                         round++;
                     }
                     
@@ -76,7 +76,7 @@ namespace PokemonProject.Entities
                     Console.WriteLine($"     {player.Name} não pode continuar.   ");
                     Console.WriteLine("========================================");
                     Console.WriteLine("\nPressione ENTER para fechar o jogo...");
-                    Console.ReadLine();
+                    Console.ReadKey(true);
                     return;
                 }
 
@@ -93,7 +93,7 @@ namespace PokemonProject.Entities
             Console.WriteLine($"HP Final: {player.HpMax} | Ataque Final: {player.Fight}");
 
             Console.WriteLine("\nObrigado por jogar! Pressione ENTER para sair.");
-            Console.ReadLine();
+            Console.ReadKey(true);
 
         }
 
