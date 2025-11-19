@@ -11,7 +11,7 @@ namespace PokemonProject.Entities
     {
         public PokemonTypes TypePrincipal {  get; private set; }
         public int HpMax { get; private set; }
-        public int HpNow { get; set; }
+        public int HpNow { get; set; } // PRIVATE SET, ENCAPSULAMENTO REMOVIDO, DEVERIA HAVER UM MÉTODO PARA ALTERAR ESSE VALOR.
         public int Defense { get; private set; }
         public int Fight { get; private set; }
 
